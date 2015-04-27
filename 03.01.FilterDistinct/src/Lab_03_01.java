@@ -61,8 +61,8 @@ public class Lab_03_01 {
     Step 4 (optional): In a list of Point objects find all points with distinct positive x-coordinate, and print these points.
      */
     private static void printDistinctPositivePoints() {
-// FAKE
 
+        // TODO: Fix this one
         points.stream()
                 .filter(p -> (p.getX() > 0 && p.getY() > 0))
                 .distinct()
