@@ -40,21 +40,32 @@ public class Lab_03_01 {
     Step 1: In a list of Point objects find all points with positive x-coordinate and print these points.
      */
     private static void printAllPositivePoints() {
-        points.stream().filter(p -> p.getX() > 0).forEach(p -> System.out.println(p));
+        points
+                .stream()
+                .filter(p -> p.getX() > 0)
+                .forEach(p -> System.out.println(p));
         //... to be done ...
     }
     /*
     Step 2: In a list of Point objects find all points with positive x-coordinate, and print these coordinates.
      */
     private static void printAllPositiveCoordinates() {
-        points.stream().filter(p -> p.getX() > 0).forEach(p -> System.out.println(p.getX()));
+        points
+                .stream()
+                .filter(p -> p.getX() > 0)
+                .forEach(p -> System.out.println(p.getX()));
         //... to be done ...
     }
     /*
     Step 3: In a list of Point objects find all points with distinct positive x-coordinate, and print these coordinates.
      */
     private static void printDistinctPositiveCoordinates() {
-        points.stream().filter(p -> p.getX() > 0).map(p -> p.getX()).distinct().forEach(p -> System.out.println(p));
+        points
+                .stream()
+                .filter(p -> p.getX() > 0)
+                .map(p -> p.getX())
+                .distinct()
+                .forEach(p -> System.out.println(p));
         //... to be done ...
     }
     /*
@@ -64,10 +75,14 @@ public class Lab_03_01 {
 
         // TODO: Fix this one
         points.stream()
-                .filter(p -> (p.getX() > 0 && p.getY() > 0))
+                .filter(p -> p.getX() > 0)
+
+                .map(p -> p.getX() )
+
                 .distinct()
+
                 .forEach(p -> System.out.println(p));
-        //... to be done ...
+
     }
     public static void main(String... args) {
         printAllPositivePoints();
