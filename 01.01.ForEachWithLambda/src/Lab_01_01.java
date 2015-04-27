@@ -44,17 +44,20 @@ public class Lab_01_01 {
     java.awt.Point[x=1,y=1]  java.awt.Point[x=2,y=2]  java.awt.Point[x=3,y=3]  ...
      */
     private static void printPoints() {
-        ... to be done ...
+        points.forEach(p -> System.out.print(p + "  "));
     }
     /*
      Print all points with the property: point.x % modVal == residue.
      For instance, filterPoints(2,0) would print all points with even x-coordinate.
      */
     private static void filterPoints(int modVal, int residue) {
-        ... to be done ...
+        points.forEach(p -> { if (p.getX() % modVal == residue)
+            System.out.println(p);
+        });
     }
     public static void main(String... args) {
         printPoints();
+        System.out.println("\n-------------------------------");
         filterPoints(2,0);
     }
 }
