@@ -3,7 +3,7 @@
   and owned by Angelika Langer & Klaus Kreft.
   contact: http://www.AngelikaLanger.com/ or mailto: info@AngelikaLanger.com
 
-  © Copyright 2013-2014 by Angelika Langer & Klaus Kreft. All rights reserved.
+  Â© Copyright 2013-2014 by Angelika Langer & Klaus Kreft. All rights reserved.
 
   Permission to use, copy, and modify this software for any non-profit
   purpose is hereby granted to attendants of the above mentioned seminar
@@ -12,8 +12,10 @@
   the suitability of this software for any purpose.  It is provided
   "as is" without express or implied warranty.
 */
-import java.awt.*;
+
+import java.awt.Point;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 public class Lab_04_05
@@ -41,7 +43,8 @@ public class Lab_04_05
     Print the new ArrayList.
      */
     private static void storePositivePointsInArrayList() {
-        ... to be done ...
+        List<Point> lePointList = points.stream().filter(p -> p.getX() > 0).collect(Collectors.toCollection(ArrayList::new));
+        System.out.println(lePointList);
     }
     public static void main(String... args) {
         storePositivePointsInArrayList();
