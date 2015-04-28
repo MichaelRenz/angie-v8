@@ -3,7 +3,7 @@
   and owned by Angelika Langer & Klaus Kreft.
   contact: http://www.AngelikaLanger.com/ or mailto: info@AngelikaLanger.com
 
-  © Copyright 2013-2014 by Angelika Langer & Klaus Kreft. All rights reserved.
+  Â© Copyright 2013-2014 by Angelika Langer & Klaus Kreft. All rights reserved.
 
   Permission to use, copy, and modify this software for any non-profit
   purpose is hereby granted to attendants of the above mentioned seminar
@@ -15,6 +15,8 @@
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.OptionalDouble;
+import java.util.OptionalInt;
 
 public class Lab_03_02 {
     private static final java.util.List<Point> points = generatePoints();
@@ -43,19 +45,29 @@ public class Lab_03_02 {
     Step 1: Use the reduce() operation with an initial value.
     */
     private static void printSumOfCoordinates_1() {
-        ... to be done ...
+    	double sum = points.stream().mapToDouble(p -> p.getX())
+    			//.peek(x -> System.out.println("Peekaboo: " + x))
+    			.reduce(0, (p1,p2) -> (p1+p2));
+    	System.out.println(sum);
+    	//... to be done ...
     }
     /*
     Step 2: Use the reduce() operation without an initial value.
     */
     private static void printSumOfCoordinates_2() {
-        ... to be done ...
+    	OptionalDouble sum = points.stream().mapToDouble(p -> p.getX()).reduce((p1,p2) -> (p1+p2));
+    	System.out.println(sum);
+    	
+    	//... to be done ...
     }
     /*
     Step 3: Try to omit the mapping to the x-coordinate and reduce the points directly.
      */
     private static void printSumOfCoordinates_3() {
-        ... to be done ...
+    	int sum = points.stream().reduce(0, (x, p) -> x + p.x, (x, p) -> (x+p)); //Integer::sum);
+    	System.out.println(sum);
+    	//... to be done ...
+    	
     }
 
     public static void main(String... args) {
