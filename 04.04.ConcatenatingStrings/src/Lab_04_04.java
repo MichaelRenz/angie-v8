@@ -50,7 +50,7 @@ public class Lab_04_04 {
     */
     private static void createString_FromPointList_UsingJoiningCollector_1() {
     	String lePointString = points.stream().map(p -> p.toString()).collect(Collectors.joining("  "));
-    	String lePointString = points.stream().map(Point::toString).collect(Collectors.joining("  "));
+    	//String lePointString = points.stream().map(Point::toString).collect(Collectors.joining("  "));
     	System.out.println(lePointString);
     }
     private static void createString_FromPointList_UsingJoiningCollector_2() {
