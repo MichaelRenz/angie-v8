@@ -1,14 +1,17 @@
 import java.math.BigInteger;
+import java.util.Arrays;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
+
+import com.sun.xml.internal.bind.v2.runtime.unmarshaller.XsiNilLoader.Array;
 
 /*
   Based on course material for "Lambdas & Streams", a seminar prepared
   and owned by Angelika Langer & Klaus Kreft.
   contact: http://www.AngelikaLanger.com/ or mailto: info@AngelikaLanger.com
 
-  © Copyright 2013-2014 by Angelika Langer & Klaus Kreft. All rights reserved.
+  Â© Copyright 2013-2014 by Angelika Langer & Klaus Kreft. All rights reserved.
 
   Permission to use, copy, and modify this software for any non-profit
   purpose is hereby granted to attendants of the above mentioned seminar
@@ -23,52 +26,61 @@ public class Lab_04_01 {
             The stream should contain the days of the week.  Find at least two ways of doing it.
      */
     private static Stream<String> createStreamFromArray_1() {
-        // TBD ... to be done ...
-        return Stream.empty();
+        Stream<String> dayStream = Stream.of("MO","TU","WE","TH", "FR", "SA", "SU");
+    	// TBD ... to be done ...
+        return dayStream;
     }
     private static Stream<String> createStreamFromArray_2() {
-        // TBD ... to be done ...
-        return Stream.empty();
+    	String[] daysOfTheWeek = {"MO","DI","MI","DO", "FR", "SA", "SO"};
+    	Stream<String> dayStream = Arrays.stream(daysOfTheWeek);
+    	// TBD ... to be done ...
+        return dayStream;
     }
     /*
     Step 2a: Create a stream of natural constants containing 2.997 924 58 (speed of light),
              3.1415 9265 359 (Pi) and 6.67384 (gravitational constant).
     */
     private static DoubleStream createDoubleStream() {
-        // TBD ... to be done ...
-        return DoubleStream.empty();
+        DoubleStream natConstants = DoubleStream.of(2.99792458, Math.PI, 6.67386);
+    	// TBD ... to be done ...
+        return natConstants;
     }
     /*
     Step 2b: Create a stream of the integral numbers from 51 thru 100 (inclusive).
     */
     private static IntStream createIntStream() {
+    	IntStream integralNumbers = IntStream.range(51, 101);
         // TBD ... to be done ...
-        return IntStream.empty();
+        return integralNumbers;
     }
     /*
         Step 3: Create a stream that has a character sequence (say, a string containing your name)
                 as the underlying stream source.
     */
     private static IntStream createCharacterStream() {
-        // TBD ... to be done ...
-        return IntStream.empty();
+    	IntStream charStream = "Eiersalat, oder eine Frau steht ihren Mann.".chars();
+    	// TBD ... to be done ...
+        return charStream;
     }
     /*
     Step 4: Create infinite streams:
-            •	a stream of pseudo random numbers,
-            •	the stream of the powers of 2, i.e., 2 4 8 16 32 64 …
-            •	the stream of BigIntegers with all positive integral numbers
+            â€¢	a stream of pseudo random numbers,
+            â€¢	the stream of the powers of 2, i.e., 2 4 8 16 32 64 â€¦
+            â€¢	the stream of BigIntegers with all positive integral numbers
             Hint: Interface Stream has generate and iterate methods for this purpose.
      */
     private static Stream<Double> createStreamOfRandomNumbers() {
-        // TBD ... to be done ...
-        return Stream.empty();
+        Stream<Double> randomNumbers = Stream.generate(Math::random);
+    	// TBD ... to be done ...
+        return randomNumbers;
     }
     private static Stream<Integer> createStreamOfPowersOfTwo() {
-        // TBD ... to be done ...
-        return Stream.empty();
+    	Stream<Integer> powersOfTwo = IntStream.range(0, 10).map(p -> (int) Math.pow(2, p)).boxed();
+    	// TBD ... to be done ...
+        return powersOfTwo;
     }
     private static Stream<BigInteger> createStreamBigIntegers() {
+        // TODO
         // TBD ... to be done ...
         return Stream.empty();
     }
