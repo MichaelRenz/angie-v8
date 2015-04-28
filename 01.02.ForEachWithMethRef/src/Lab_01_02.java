@@ -3,7 +3,7 @@
   and owned by Angelika Langer & Klaus Kreft.
   contact: http://www.AngelikaLanger.com/ or mailto: info@AngelikaLanger.com
 
-  © Copyright 2013-2014 by Angelika Langer & Klaus Kreft. All rights reserved.
+  Â© Copyright 2013-2014 by Angelika Langer & Klaus Kreft. All rights reserved.
 
   Permission to use, copy, and modify this software for any non-profit
   purpose is hereby granted to attendants of the above mentioned seminar
@@ -42,18 +42,19 @@ public class Lab_01_02 {
     This time, use a method reference instead of a lambda expression.
     Use a reference to an existing method from the JDK libraries.
      */
-    private static void printPoints_1() {
-        ... to be done ...
+    private static void printPoint_1(Point p) {
+        System.out.print(p + "  ");
     }
     /*
     Define a helper method that formats the output, e.g. insert two blanks after each point.
     Print all points using a reference to the helper method.
      */
     private static void printPoints_2() {
-        .. to be done ...
+    	points.forEach(Lab_01_02::printPoint_1);
+//        .. to be done ...
     }
     public static void main(String... args) {
-        printPoints_1();
+        //printPoint_1();
         printPoints_2();
     }
 }
