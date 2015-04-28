@@ -3,7 +3,7 @@
   and owned by Angelika Langer & Klaus Kreft.
   contact: http://www.AngelikaLanger.com/ or mailto: info@AngelikaLanger.com
 
-  © Copyright 2013-2014 by Angelika Langer & Klaus Kreft. All rights reserved.
+  Â© Copyright 2013-2014 by Angelika Langer & Klaus Kreft. All rights reserved.
 
   Permission to use, copy, and modify this software for any non-profit
   purpose is hereby granted to attendants of the above mentioned seminar
@@ -15,6 +15,7 @@
 
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Lab_04_04 {
@@ -42,16 +43,20 @@ public class Lab_04_04 {
                  java.awt.Point[x=1,y=1]  java.awt.Point[x=2,y=2]  java.awt.Point[x=3,y=3]  ...
             In this first step use the collect() operation and the joining() collector from class Collectors.
             There are two versions available:
-            •	without delimiter
-            •	with delimiter
+            â€¢	without delimiter
+            â€¢	with delimiter
             Try out both
 
     */
     private static void createString_FromPointList_UsingJoiningCollector_1() {
-        ... to be done ...
+    	String lePointString = points.stream().map(p -> p.toString()).collect(Collectors.joining("  "));
+    	System.out.println(lePointString);
     }
     private static void createString_FromPointList_UsingJoiningCollector_2() {
-        ... to be done ...
+    	long s = System.nanoTime();
+    	String lePointString = points.stream().map(p -> p.toString()).collect(Collectors.joining());
+    	System.out.println(lePointString);
+    	System.out.println(System.nanoTime() - s);
     }
 
     /*
@@ -61,7 +66,11 @@ public class Lab_04_04 {
             of both solutions.  Which one do you expect to run faster?
      */
     private static void createString_FromPointList_UsingString() {
-        ... to be done ...
+    	long s = System.nanoTime();
+    	String lePointString = points.stream().map(p -> p.toString()).reduce("", (s1,s2) -> (s1 + s2));
+    	System.out.println(lePointString);
+    	System.out.println(System.nanoTime() - s);
+    	// ... to be done ...
     }
 
     public static void main(String... args) {
@@ -69,3 +78,4 @@ public class Lab_04_04 {
         createString_FromPointList_UsingJoiningCollector_2();
         createString_FromPointList_UsingString();
     }
+}
