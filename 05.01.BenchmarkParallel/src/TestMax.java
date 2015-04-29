@@ -138,16 +138,16 @@ public class TestMax {
 				if (i > m)
 					m = i;
 
-		}, "LList, for-loop");
+		}, "Linked List, for-loop");
 
 		BenchmarkTest.addTestCase(
 				() -> llist.stream().reduce(Integer.MIN_VALUE,
-						(i, j) -> Math.max(i, j)), "LList, sequential");
+						(i, j) -> Math.max(i, j)), "Linked List, sequential");
 
 		BenchmarkTest.addTestCase(
 				() -> llist.stream().parallel()
 						.reduce(Integer.MIN_VALUE, (i, j) -> Math.max(i, j)),
-				"LList, parallel");
+				"Linked List, parallel");
 
 		/*
 		 * test with HashSet
@@ -164,16 +164,16 @@ public class TestMax {
 				if (i > m)
 					m = i;
 
-		}, "hset, for-loop");
+		}, "Hashset, for-loop");
 
 		BenchmarkTest.addTestCase(
 				() -> hset.stream().reduce(Integer.MIN_VALUE,
-						(i, j) -> Math.max(i, j)), "hset, sequential");
+						(i, j) -> Math.max(i, j)), "Hashset, sequential");
 
 		BenchmarkTest.addTestCase(
 				() -> hset.stream().parallel()
 						.reduce(Integer.MIN_VALUE, (i, j) -> Math.max(i, j)),
-				"hset, parallel");
+				"Hashset, parallel");
 		/*
 		 * test with TreeSet
 		 */
@@ -189,16 +189,16 @@ public class TestMax {
 				if (i > m)
 					m = i;
 
-		}, "tset, for-loop");
+		}, "Treeset, for-loop");
 
 		BenchmarkTest.addTestCase(
 				() -> tset.stream().reduce(Integer.MIN_VALUE,
-						(i, j) -> Math.max(i, j)), "tset, sequential");
+						(i, j) -> Math.max(i, j)), "Treeset, sequential");
 
 		BenchmarkTest.addTestCase(
 				() -> tset.stream().parallel()
 						.reduce(Integer.MIN_VALUE, (i, j) -> Math.max(i, j)),
-				"tset, parallel");
+				"Treeset, parallel");
 
 		// ///////////////////////////////////////////////////////////////////////
 		// START BENCHMARK
