@@ -54,10 +54,13 @@ public class TestMax {
 		BenchmarkTest.addTestCase(() -> {
 			int[] a = ints;
 			double m = Double.MIN_VALUE;
-
-			for (int i : a)
-				if (i > m)
-					m = Sine.slowSin(i);
+			double j;
+			for (int i : a) {
+				j = Sine.slowSin(i);
+				if (j > m)
+					m = j;
+			}
+				
 
 		}, "primitive array MIT Map, for-loop");
 
